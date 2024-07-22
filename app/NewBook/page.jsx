@@ -1,31 +1,32 @@
 "use client"
-import React, { useState } from 'react'
+import { useState } from 'react';
 import useBooks from '../Hooks/Hook';
+
 
 export default function AddedNewBooks() {
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [description, setDescription] = useState('');
+  const [longDescription, setDescription] = useState('');
+  const [shortDescription, setsDescription] = useState('');
   const [publishedDate, setPublishedDate] = useState('');
   const [image, setImage] = useState('');
   const [status, setStatus] = useState('');
-  const [books, setBooks] = useBooks();
+  const { books, setBooks } = useBooks();
 
-
-  const handleSubmit = async  (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const id = Math.random().toString(36).substr(2, 9);
     const newBook = {
-      id: books.length + 1,
       title,
-      author,
-      description,
+      id,
+      shortDescription,
+      longDescription,
       publishedDate,
       image,
       status,
     };
-    const response = await fetch('/books.json', {
+
+    const response = await fetch('/api', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,11 +37,12 @@ export default function AddedNewBooks() {
     if (response.ok) {
       const addedBook = await response.json();
       setBooks([...books, addedBook]);
-      router.push('/');
     } else {
       console.error('Failed to add book');
     }
   };
+
+
   return (
     <div className=''>
           <div className="max-w-xl mx-auto p-4 py-10 lg:py-32 shadow-xl px-10 mb-10">
@@ -56,20 +58,20 @@ export default function AddedNewBooks() {
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+    
         <div className="mb-4">
-          <label className="block text-gray-700">Author</label>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+          <label className="block text-gray-700">Short Description</label>
+          <textarea
+            value={shortDescription}
+            onChange={(e) => setsDescription(e.target.value)}
             required
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          ></textarea>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">Description</label>
+          <label className="block text-gray-700">Long Description</label>
           <textarea
-            value={description}
+            value={longDescription}
             onChange={(e) => setDescription(e.target.value)}
             required
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

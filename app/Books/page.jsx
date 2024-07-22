@@ -4,6 +4,7 @@ import React from 'react'
 import Booksdata from './BooksData/Booksdata'
 import useBooks from '../Hooks/Hook';
 import Image from 'next/image';
+import Link from "next/link";
 
 
 export default function Books() {
@@ -20,6 +21,7 @@ export default function Books() {
         <Booksdata key={book.id} book={book} />
       ))}
     </div>
+
         </div>
      </div>
 
