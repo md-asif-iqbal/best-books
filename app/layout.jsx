@@ -5,7 +5,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Read your favourite Books",
+  title: "Read Your Favourite Books",
   description: "Read the famous books and you maybe interested and enjoy the story",
 };
 
