@@ -33,19 +33,19 @@ export default function RootLayout({ children }) {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><Link href='/'  className="hover:text-rose-600 hover:border-b-2">Home</Link></li>
-        <li><Link href="/Books"  className="hover:text-rose-600 hover:border-b-2 ">Books</Link></li>
-        <li><Link href="/NewBook"  className="hover:text-rose-600 hover:border-b-2 ">Added New Book</Link></li>
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-mono">
+        <li><Link href='/'  className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500">Home</Link></li>
+        <li><Link href="/Books"  className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500">Books</Link></li>
+        <li><Link href="/NewBook"  className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500">Added New Book</Link></li>
       </ul>
     </div>
-    <Link href='/' className=" cursor-pointer font-bold lg:ml-10 text-2xl uppercase">Learn somethings</Link>
+    <Link href='/' className=" cursor-pointer font-bold lg:ml-10 text-2xl uppercase font-mono text-center">Learn somethings</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="flex items-center gap-8 px-1 font-bold text-xl ">
-      <li><Link href='/' className="hover:text-rose-600 hover:border-b-2 ">Home</Link></li>
-      <li><Link href="/Books"  className="hover:text-rose-600 hover:border-b-2 ">Books</Link></li>
-      <li><Link href="/NewBook"  className="hover:text-rose-600 hover:border-b-2 ">Added New Book</Link></li>
+    <ul className="flex items-center gap-8 px-1 font-bold text-xl font-mono ">
+      <li><Link href='/' className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500 ">Home</Link></li>
+      <li><Link href="/Books"  className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500">Books</Link></li>
+      <li><Link href="/NewBook"  className="hover:text-violet-700 hover:border-b-2 hover:border-violet-500">Added New Book</Link></li>
     </ul>
   </div>
 

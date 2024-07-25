@@ -5,7 +5,7 @@ export default function useBooks() {
   const[loading , setLoading] =useState(true)
 
   useEffect(() => {
-    // Simulating fetching data from an API or database
+
     const fetchBooks = async () => {
       const response = await fetch('/api'); // Replace with your actual data source
       const data = await response.json();

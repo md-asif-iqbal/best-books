@@ -1,6 +1,7 @@
 "use client"
 import useBooks from '@/app/Hooks/Hook';
 import Image from 'next/image'
+import Link from 'next/link';
 import React, { useEffect, useState }  from 'react'
 
 export default function BooksDetails({params}) {
@@ -21,7 +22,7 @@ export default function BooksDetails({params}) {
 			<Image src={items.image} alt="books image" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" width={400}
         height={200} />
 		</div>
-		<div className="flex flex-col justify-center p-6 text-start  lg:max-w-4xl">
+		<div className="flex flex-col justify-center p-6 text-start  lg:max-w-2xl xl:max-w-4xl">
 			<h1 className="text-2xl font-bold leading-none sm:text-2xl">Book Name:{items.title}
 			</h1>
 			<h1 className=" text-lg ">Status: {items.status}
@@ -30,6 +31,7 @@ export default function BooksDetails({params}) {
 			</h1>
 			<p className="mt-6 mb-8 text-lg sm:mb-12">Description: {items.longDescription}
 			</p>
+			<Link href='/' className=" uppercase text-center bg-white border-b-[3px] hover:bg-slate-100 border-purple-600 rounded shadow-xl px-8 py-2 p-1 w-40">go back </Link>
 
 		</div>
 	</div>
